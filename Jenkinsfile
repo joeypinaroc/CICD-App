@@ -12,7 +12,7 @@ pipeline {
 
             steps {
                 sh '''
-                    ls-la
+                    ls -la
                     node --version
                     npm install
                     npm run build
