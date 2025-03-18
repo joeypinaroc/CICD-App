@@ -8,16 +8,16 @@ pipeline {
                     image 'node:20.11.0-bullseye'
                     reuseNode true
                 }
+            }
 
-                steps {
-                    sh '''
-                        ls-la
-                        node --version
-                        npm install
-                        npm run build
-                        ls -la    
-                    '''
-                }
+            steps {
+                sh '''
+                    ls-la
+                    node --version
+                    npm install
+                    npm run build
+                    ls -la    
+                '''
             }
         }
 
@@ -27,13 +27,13 @@ pipeline {
                     image 'node:20.11.0-bullseye'
                     reuseNode true
                 }
+            }
 
-                steps {
-                    sh '''
-                        test -f build/index.html
+            steps {
+                sh '''
+                    test -f build/index.html
                     npm test  
-                    '''
-                }
+                '''
             }
         }
     }
